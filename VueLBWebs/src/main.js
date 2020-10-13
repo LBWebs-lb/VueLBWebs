@@ -1,22 +1,29 @@
 import Vue from 'vue';
 import App from './App.vue';
-import Test from './test.vue';
-import Api from './Api.vue';
+import Menu from './Menu.vue';
+import Acces from './Acces.vue';
 
 Vue.config.productionTip = true;
 
 new Vue({
-    render: h => h(App),
+    render: b => b(Menu),
 }
-).$mount('#app');
-      
-new Vue({
-    render: b => b(Test),
-}
-).$mount('#testing');
+).$mount('#menu');
 
+const routes = {
+    '/': App,
+    '/acces': Acces
+}
 
 new Vue({
-    render: b => b(Api),
-}
-).$mount('#api');
+    el: '#app',
+    data: {
+        currentRoute: window.location.pathname
+    },
+    computed: {
+        ViewComponent() {
+            return routes[this.currentRoute]
+        }
+    },
+    render(h) { return h(this.ViewComponent) }
+})

@@ -1,16 +1,16 @@
 <template>
-    <div id="test">
-        <Test msn="" />
+    <div id="app">
+        <Acces />
     </div>
 </template>
 
 <script>
-    import Test from './components/test.vue';
+    import Acces from './components/Acces.vue';
 
     export default {
-        name: 'test',
+        name: 'acces',
         components: {
-            Test
+            Acces
         }
     };
 </script>

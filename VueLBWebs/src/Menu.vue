@@ -1,16 +1,16 @@
 <template>
-    <div id="api">
-        <Api />
+    <div id="menu">
+        <Menu />
     </div>
 </template>
 
 <script>
-    import Api from './components/Api.vue';
+    import Menu from './components/menu.vue';
 
     export default {
-        name: 'api',
+        name: 'menuprincipal',
         components: {
-            Api
+            Menu
         }
     };
 </script>

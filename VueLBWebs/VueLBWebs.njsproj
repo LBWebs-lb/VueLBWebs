@@ -32,17 +32,17 @@
     <Content Include="public\favicon.ico" />
     <Content Include="public\index.html" />
     <Content Include="public\logo.png" />
-    <Content Include="src\Api.vue">
+    <Content Include="src\Acces.vue">
       <SubType>Code</SubType>
     </Content>
     <Content Include="src\App.vue" />
-    <Content Include="src\components\Api.vue">
+    <Content Include="src\components\Acces.vue">
       <SubType>Code</SubType>
     </Content>
     <Content Include="src\components\Home.vue" />
     <Content Include="package.json" />
     <Content Include="README.md" />
-    <Content Include="src\test.vue">
+    <Content Include="src\Menu.vue">
       <SubType>Code</SubType>
     </Content>
   </ItemGroup>
@@ -55,7 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="babel.config.js" />
-    <Content Include="src\components\test.vue">
+    <Content Include="src\components\Menu.vue">
       <SubType>Code</SubType>
     </Content>
     <Content Include="src\main.js" />
