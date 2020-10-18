@@ -13,13 +13,8 @@
                 <td>{{ value.passWd }}</td>
                 <td>{{ value.linkWp }}</td>
                 <td>{{ value.acc }}</td>
-                <td>
-                    <button class="mod">Modificar</button>
-                </td>
-                <td>
-                    <button v-on:click="deleteData({{value.idlb}})" class="mod">Eliminar</button>
-                    <!--<button class="mod">Eliminar</button>-->
-                </td>
+                <td><button class="mod">Modificar</button></td>
+                <td><button v-on:click="deleteData(value.idlb)" class="del">Eliminar</button></td>
             </tr>
         </table>
     </div>
@@ -29,7 +24,7 @@
     export default {
         el: '#app',
         data: () => ({
-            results: null
+            results: null,
         }),
         created() {
             axios.get("http://localhost:49489/api/LBAcces/").then((result) => {
@@ -39,11 +34,19 @@
         methods: {
             deleteData: function (id) {
                 axios.delete('http://localhost:49489/api/LBAcces/' + id)
-                    .then(result => {
-                        this.results = result.data;
-                    });
+                    .then(this.rtndata);
+            },
+            rtndata: function () {
+                axios.get("http://localhost:49489/api/LBAcces/")
+                    .then((result) => {
+                    this.results = result.data;
+                });
+            },
+            pagemod: function () {
+                window.location.href = 'some url';
             }
         }
+
     };
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -52,10 +55,9 @@
         width: 70%;
         margin: auto;
     }
-
-        table td {
-            text-align: center;
-        }
+    table td {
+        text-align: center;
+    }
 
     .title {
         text-align: center;

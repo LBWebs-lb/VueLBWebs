@@ -1,6 +1,6 @@
 <template>
     <div class="menu">
-       <img src="logo.png" />
+       <img src="/logo.png" />
         <ul>
             <li><a href="/">Inici</a></li>
             <li><a href="/acces">Acces</a></li>

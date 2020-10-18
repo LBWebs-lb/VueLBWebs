@@ -2,6 +2,7 @@ import Vue from 'vue';
 import App from './App.vue';
 import Menu from './Menu.vue';
 import Acces from './Acces.vue';
+import CreateAcces from './CreateAcces.vue';
 
 Vue.config.productionTip = true;
 
@@ -12,7 +13,8 @@ new Vue({
 
 const routes = {
     '/': App,
-    '/acces': Acces
+    '/acces': Acces,
+    '/acces/create': CreateAcces
 }
 
 new Vue({

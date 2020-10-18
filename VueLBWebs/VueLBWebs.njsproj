@@ -36,7 +36,13 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="src\App.vue" />
+    <Content Include="src\CreateAcces.vue">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="src\components\Acces.vue">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\components\CreateAcces.vue">
       <SubType>Code</SubType>
     </Content>
     <Content Include="src\components\Home.vue" />
