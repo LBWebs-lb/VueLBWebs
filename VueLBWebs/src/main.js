@@ -24,7 +24,7 @@ new Vue({
     },
     computed: {
         ViewComponent() {
-            return routes[this.currentRoute]
+            return routes[this.currentRoute] 
         }
     },
     render(h) { return h(this.ViewComponent) }

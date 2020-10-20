@@ -35,18 +35,20 @@
     <Content Include="src\Acces.vue">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="src\App.vue" />
-    <Content Include="src\CreateAcces.vue">
+    <Content Include="src\APIService.js">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="src\App.vue" />
     <Content Include="src\components\Acces.vue">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\CreateAcces.vue">
       <SubType>Code</SubType>
     </Content>
     <Content Include="src\components\CreateAcces.vue">
       <SubType>Code</SubType>
     </Content>
     <Content Include="src\components\Home.vue" />
-    <Content Include="package.json" />
     <Content Include="README.md" />
     <Content Include="src\Menu.vue">
       <SubType>Code</SubType>

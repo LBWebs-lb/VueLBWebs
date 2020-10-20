@@ -17,48 +17,41 @@
                 <td><button v-on:click="deleteData(value.idlb)" class="del">Eliminar</button></td>
             </tr>
         </table>
+        <button v-on:click="pagemod()" class="btncrt">Nou</button>
     </div>
 </template>
 <script>
-    import axios from "axios";
+    import { APIService } from '../APIService';
+    const apiService = new APIService("lbacces");
     export default {
-        el: '#app',
+        name: 'acces',
         data: () => ({
             results: null,
         }),
         created() {
-            axios.get("http://localhost:49489/api/LBAcces/").then((result) => {
+            apiService.getacces().then((result) => {
                 this.results = result.data;
             })
         },
         methods: {
             deleteData: function (id) {
-                axios.delete('http://localhost:49489/api/LBAcces/' + id)
-                    .then(this.rtndata);
+                apiService.deleteacces(id).then(
+                    this.loadOnce()
+                );
             },
-            rtndata: function () {
-                axios.get("http://localhost:49489/api/LBAcces/")
-                    .then((result) => {
-                    this.results = result.data;
-                });
-            },
+
             pagemod: function () {
-                window.location.href = 'some url';
+                window.location.href = '/acces/create';
+            },
+            loadOnce: function () {
+                location.reload();
             }
         }
-
     };
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    table {
-        width: 70%;
-        margin: auto;
-    }
-    table td {
-        text-align: center;
-    }
-
+    
     .title {
         text-align: center;
         text-transform: uppercase;
@@ -70,22 +63,18 @@
         border: 1px solid black;
     }
 
-    button {
-        border: none;
-        color: white;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-    }
-
     .mod {
         background-color: #008CBA;
     }
 
     .del {
         background-color: #f44336;
+    }
+
+    .btncrt {
+        margin-top: 25px;
+        background-color: #257904;
+        margin-left: 47%;
     }
 </style>
 
