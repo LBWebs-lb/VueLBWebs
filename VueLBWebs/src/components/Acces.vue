@@ -13,9 +13,9 @@
                 <td>{{ value.passWd }}</td>
                 <td>{{ value.linkWp }}</td>
                 <td>{{ value.acc }}</td>
-                <td><button class="mod">Modificar</button></td>
+                <td><button v-on:click="moddata(value.idlb)" class="mod">Modificar</button></td>
                 <td><button v-on:click="deleteData(value.idlb)" class="del">Eliminar</button></td>
-            </tr>
+            </tr> 
         </table>
         <button v-on:click="pagemod()" class="btncrt">Nou</button>
     </div>
@@ -23,8 +23,18 @@
 <script>
     import { APIService } from '../APIService';
     const apiService = new APIService("lbacces");
+    import EditAcces from './EditAcces.vue';
+    import EventBus from './event-bus';
+
     export default {
         name: 'acces',
+        routes: [
+            {
+                path: '/api/lbacces/edit/:id',
+                name: 'EditAcces',
+                component: EditAcces,
+            },
+        ],
         data: () => ({
             results: null,
         }),
@@ -45,13 +55,17 @@
             },
             loadOnce: function () {
                 location.reload();
+            },
+            moddata: function (idacces) {
+                EventBus.$emit('mod-acces', idacces)
+                window.location.href = '/acces/edit';
             }
         }
     };
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    
+
     .title {
         text-align: center;
         text-transform: uppercase;

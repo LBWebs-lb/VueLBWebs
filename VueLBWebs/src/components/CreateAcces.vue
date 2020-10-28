@@ -13,29 +13,13 @@
 </template>
 
 <script>
-    import axios from "axios";
     import { APIService } from '../APIService';
     const apiService = new APIService("lbacces");
 
     export default {
         name: 'crtacces',
-        data: {
-            dnomusuari: '',
-            pass1: '',
-            pass2: '',
-            linkwp: '',
-            acceswd: ''
-        },
         methods: {
-            sbmit() {
-                let post = {
-                    title: 'foo',
-                    body: 'bar',
-                    userId: 1
-                };
-                axios.put("https://jsonplaceholder.typicode.com/posts/1", post);
-            },
-            checkForm: function (e) {
+            checkForm: function () {
                 const userWp = document.getElementById("dnomusuari").value;
                 const passWd = document.getElementById("passwd1").value;
                 const passWd2 = document.getElementById("passwd2").value;

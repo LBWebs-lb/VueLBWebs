@@ -1,21 +1,20 @@
 <template>
     <div id="app">
-        <Acces />
+        <EditAcces />
     </div>
 </template>
 
 <script>
-    import Acces from './components/Acces.vue';
-    
-
+    import EditAcces from './components/EditAcces.vue';
     export default {
-        name: 'acces',
+        name: 'edtacces',
         components: {
-            Acces
+            EditAcces
         }
     };
+
 </script>
 
-<style>
+<style scoped>
 </style>
 
