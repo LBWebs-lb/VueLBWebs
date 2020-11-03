@@ -6,11 +6,12 @@
 
 <script>
     import Home from './components/Home.vue';
-
+    import Acces from './components/Acces';
+    import EditAcces from './components/EditAcces';
     export default {
         name: 'app',
         components: {
-            Home
+            Home, Acces, EditAcces
         }
     };
 </script>

@@ -1,18 +1,19 @@
 <template>
-    <h1>{{header}}</h1>
+    <h1>{{sort}}</h1>
 </template>
 
 <script>
-    import { bus } from '../main';
+    import EventBus from '../bus'
     export default {
-        props: {
-            header: {
-                type: Number
+        name: 'editacces',
+        data() {
+            return {
+                sort: null
             }
         },
-        created() {
-            bus.$on('changeIt', (data) => {
-                this.header = data;
+        created: function () {
+            EventBus.$on("accesmod", (sort) => {
+                this.sort = sort
             })
         }
     }
