@@ -1,25 +1,20 @@
 <template>
-    <h1>dasdasdas</h1>
+    <h1>{{sort}}</h1>
 </template>
 
 <script>
-    import EventBus from './event-bus';
+    import EventBus from '../bus'
     export default {
+        name: 'editacces',
         data() {
             return {
-                idacces: null
+                sort: null
             }
         },
-        created() {
-            EventBus.$on('mod-acces', (idacces) => {
-                this.idacces = idacces
+        created: function () {
+            EventBus.$on("accesmod", (sort) => {
+                this.sort = sort
             })
-            alert(this.idacces);
-        },
-        methods: {
-            //getVueItems: function (page) {
-              
-            //}
         }
     }
 </script>

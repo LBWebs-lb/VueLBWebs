@@ -23,18 +23,18 @@
 <script>
     import { APIService } from '../APIService';
     const apiService = new APIService("lbacces");
-    import EditAcces from './EditAcces.vue';
-    import EventBus from './event-bus';
+    import EventBus from '../bus'
 
     export default {
         name: 'acces',
-        routes: [
-            {
-                path: '/api/lbacces/edit/:id',
-                name: 'EditAcces',
-                component: EditAcces,
-            },
-        ],
+        //routes: [
+        //    {
+        //        path: '/api/lbacces/edit/:id',
+        //        name: 'EditAcces',
+        //        component: EditAcces,
+        //    },
+        //],
+
         data: () => ({
             results: null,
         }),
@@ -57,8 +57,8 @@
                 location.reload();
             },
             moddata: function (idacces) {
-                EventBus.$emit('mod-acces', idacces)
-                window.location.href = '/acces/edit';
+                EventBus.$emit("accesmod", idacces);
+                //window.location.href = '/acces/edit';
             }
         }
     };

@@ -39,6 +39,9 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="src\App.vue" />
+    <Content Include="src\bus.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="src\components\Acces.vue">
       <SubType>Code</SubType>
     </Content>
