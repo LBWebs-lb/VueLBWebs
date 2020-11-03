@@ -56,7 +56,7 @@
     <Content Include="src\EditAcces.vue">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="src\components\event-bus.js">
+    <Content Include="src\event-bus.js">
       <SubType>Code</SubType>
     </Content>
     <Content Include="src\Menu.vue">

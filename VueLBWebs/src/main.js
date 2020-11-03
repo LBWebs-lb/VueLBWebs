@@ -7,6 +7,7 @@ import EditAcces from './EditAcces.vue';
 
 Vue.config.productionTip = true;
 
+export const bus = new Vue();
 new Vue({
     render: b => b(Menu),
 }

@@ -24,7 +24,7 @@
     import { APIService } from '../APIService';
     const apiService = new APIService("lbacces");
     import EditAcces from './EditAcces.vue';
-    import EventBus from './event-bus';
+    import { bus } from '../main'
 
     export default {
         name: 'acces',
@@ -57,8 +57,7 @@
                 location.reload();
             },
             moddata: function (idacces) {
-                EventBus.$emit('mod-acces', idacces)
-                window.location.href = '/acces/edit';
+                bus.$emit('changeIt', idacces);
             }
         }
     };

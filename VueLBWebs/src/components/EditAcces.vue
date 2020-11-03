@@ -1,25 +1,19 @@
 <template>
-    <h1>dasdasdas</h1>
+    <h1>{{header}}</h1>
 </template>
 
 <script>
-    import EventBus from './event-bus';
+    import { bus } from '../main';
     export default {
-        data() {
-            return {
-                idacces: null
+        props: {
+            header: {
+                type: Number
             }
         },
         created() {
-            EventBus.$on('mod-acces', (idacces) => {
-                this.idacces = idacces
+            bus.$on('changeIt', (data) => {
+                this.header = data;
             })
-            alert(this.idacces);
-        },
-        methods: {
-            //getVueItems: function (page) {
-              
-            //}
         }
     }
 </script>
